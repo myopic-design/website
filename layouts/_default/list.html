@@ -1,0 +1,18 @@
+{{ define "article-main" }}
+  <div class="container-out">
+    <div class="container-mid">
+      {{ with .Content }}
+        <div class="container-in prose-defaults prose pb-8 md:prose-lg lg:prose-xl lg:pb-12">
+          {{ . }}
+        </div>
+      {{ end }}
+
+      <div class="container-in">
+        <h2 class="sr-only">Latest articles</h2>
+
+        {{ partial "article-list" .Paginator.Pages }}
+        {{ partial "pagination" . }}
+      </div>
+    </div>
+  </div>
+{{ end }}

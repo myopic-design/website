@@ -1,0 +1,16 @@
+{{ $href := .href }}
+{{ $active := .active | default false }}
+{{ $children := .children }}
+
+<a
+  href="{{ $href }}"
+  {{ if $active }}aria-current="page"{{ end }}
+  class="{{ cond $active "text-pink-600 dark:text-pink-400" "hocus:text-pink-600 dark:hocus:text-pink-400" }} relative block px-3 py-2"
+>
+  {{ $children }}
+  {{ if $active }}
+    <span
+      class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-pink-600/0 via-pink-600/40 to-pink-600/0 dark:from-pink-400/0 dark:via-pink-400/40 dark:to-pink-400/0"
+    ></span>
+  {{ end }}
+</a>
