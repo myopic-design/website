@@ -1,0 +1,6 @@
+{{ $currentPage := .currentPage }}
+
+{{ range site.Menus.main }}
+  {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+  {{ partial "utils/link-nav" (dict "href" .URL "active" $isActive "children" .Name) }}
+{{ end }}

@@ -1,0 +1,120 @@
+{{ $p := .Paginator }}
+
+{{ if gt $p.TotalPages 1 }}
+  <nav aria-label="pagination" class="pt-10">
+    <div
+      class="flex items-center justify-between border-t border-stone-200/50 dark:border-stone-700/50"
+    >
+      {{ $adjacent_links := 1 }}
+      {{ $max_links := add (mul $adjacent_links 2) 1 }}
+      {{ $lower_limit := add $adjacent_links 1 }}
+      {{ $upper_limit := sub $p.TotalPages $adjacent_links }}
+      {{ $has_enough_pages := gt $p.TotalPages $max_links }}
+      {{ $show_first := ge $p.PageNumber $max_links }}
+      {{ $show_prev_ellip := gt $p.PageNumber $max_links }}
+      {{ $show_last := le $p.PageNumber (sub $p.TotalPages (sub $max_links 1)) }}
+      {{ $show_next_ellip := lt $p.PageNumber (sub $p.TotalPages (sub $max_links 1)) }}
+
+      {{ $pageStyles := "relative flex items-center px-4 py-2 font-medium" }}
+      {{ $currentPageStyles := printf "%s text-pink-600 dark:text-pink-400" $pageStyles }}
+      {{ $disabledPageStyles := printf "%s text-stone-600 dark:text-stone-400" $pageStyles }}
+      {{ $enabledPageStyles := printf "%s hocus:text-pink-600 dark:hocus:text-pink-400" $pageStyles }}
+
+      <div class="flex w-0 flex-1 justify-start">
+        {{ with $p.Prev }}
+          <a href="{{ .URL }}" class="{{ $enabledPageStyles }}">
+            <span aria-hidden="true" class="pr-2">←</span>Newer
+          </a>
+        {{ else }}
+          <a role="link" aria-disabled="true" class="{{ $disabledPageStyles }}">
+            <span aria-hidden="true" class="pr-2">←</span>Newer
+          </a>
+        {{ end }}
+      </div>
+
+      <div class="hidden sm:flex">
+        {{ if and $has_enough_pages $show_first }}
+          <a aria-label="Page 1 (first)" href="{{ $p.First.URL }}" class="{{ $enabledPageStyles }}">
+            1
+          </a>
+          {{ if $show_prev_ellip }}
+            <span aria-hidden="true" class="{{ $disabledPageStyles }}">&hellip;</span>
+          {{ end }}
+        {{ end }}
+
+        {{ range $p.Pagers }}
+          {{ $is_current_page := eq $p . }}
+          {{ $show_page := false }}
+
+          {{ if $has_enough_pages }}
+            {{ if le $p.PageNumber $lower_limit }}
+              {{ if le .PageNumber $max_links }}
+                {{ $show_page = true }}
+              {{ end }}
+            {{ else if ge $p.PageNumber $upper_limit }}
+              {{ if gt .PageNumber (sub $p.TotalPages $max_links) }}
+                {{ $show_page = true }}
+              {{ end }}
+            {{ else }}
+              {{ if and (ge .PageNumber (sub $p.PageNumber $adjacent_links)) (le .PageNumber (add $p.PageNumber $adjacent_links)) }}
+                {{ $show_page = true }}
+              {{ end }}
+            {{ end }}
+          {{ else }}
+            {{ $show_page = true }}
+          {{ end }}
+
+          {{ if $show_page }}
+            {{ if $is_current_page }}
+              <a
+                role="link"
+                aria-current="page"
+                aria-disabled="true"
+                aria-label="Page {{ .PageNumber }}"
+                class="{{ $currentPageStyles }}"
+              >
+                {{ .PageNumber }}
+                <span
+                  class="absolute inset-x-1 -top-px h-px bg-gradient-to-r from-pink-600/0 via-pink-600/40 to-pink-600/0 dark:from-pink-400/0 dark:via-pink-400/40 dark:to-pink-400/0"
+                ></span>
+              </a>
+            {{ else }}
+              <a
+                aria-label="Page {{ .PageNumber }}"
+                href="{{ .URL }}"
+                class="{{ $enabledPageStyles }}"
+              >
+                {{ .PageNumber }}
+              </a>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+
+        {{ if and $has_enough_pages $show_last }}
+          {{ if $show_next_ellip }}
+            <span aria-hidden="true" class="{{ $disabledPageStyles }}">&hellip;</span>
+          {{ end }}
+          <a
+            aria-label="Page {{ $p.TotalPages }} (last)"
+            href="{{ $p.Last.URL }}"
+            class="{{ $enabledPageStyles }}"
+          >
+            {{ $p.TotalPages }}
+          </a>
+        {{ end }}
+      </div>
+
+      <div class="flex w-0 flex-1 justify-end">
+        {{ with $p.Next }}
+          <a href="{{ .URL }}" class="{{ $enabledPageStyles }}">
+            Older<span aria-hidden="true" class="pl-2">→</span>
+          </a>
+        {{ else }}
+          <a role="link" aria-disabled="true" class="{{ $disabledPageStyles }}">
+            Older<span aria-hidden="true" class="pl-2">→</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </nav>
+{{ end }}
