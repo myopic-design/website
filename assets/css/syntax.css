@@ -1,0 +1,316 @@
+/* PreWrapper */
+.chroma {
+  @apply bg-white/90 text-stone-800 ring-1 ring-stone-900/5 dark:bg-stone-800/90 dark:ring-white/10 dark:text-pink-200;
+}
+/* Other */
+.chroma .x {
+}
+/* Error */
+.chroma .err {
+}
+/* CodeLine */
+.chroma .cl {
+}
+/* LineLink */
+.chroma .lnlinks {
+  @apply text-inherit no-underline outline-0;
+}
+/* LineTableTD */
+.chroma .lntd {
+  @apply m-0 border-0 p-0 align-top;
+}
+/* LineTable */
+.chroma .lntable {
+  @apply m-0 border-spacing-0 border-0 p-0;
+}
+/* LineHighlight */
+.chroma .hl {
+  @apply bg-stone-950/10 dark:bg-stone-100/10;
+}
+/* LineNumbersTable */
+.chroma .lnt {
+  @apply mr-2 select-none whitespace-pre px-2 py-0 text-stone-500;
+}
+/* LineNumbers */
+.chroma .ln {
+  @apply mr-2 select-none whitespace-pre px-2 py-0 text-stone-500;
+}
+/* Line */
+.chroma .line {
+  @apply flex;
+}
+/* Keyword */
+.chroma .k {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* KeywordConstant */
+.chroma .kc {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* KeywordDeclaration */
+.chroma .kd {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* KeywordNamespace */
+.chroma .kn {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* KeywordPseudo */
+.chroma .kp {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* KeywordReserved */
+.chroma .kr {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* KeywordType */
+.chroma .kt {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* Name */
+.chroma .n {
+}
+/* NameAttribute */
+.chroma .na {
+  @apply font-bold;
+}
+/* NameBuiltin */
+.chroma .nb {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* NameBuiltinPseudo */
+.chroma .bp {
+}
+/* NameClass */
+.chroma .nc {
+}
+/* NameConstant */
+.chroma .no {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* NameDecorator */
+.chroma .nd {
+}
+/* NameEntity */
+.chroma .ni {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* NameException */
+.chroma .ne {
+  @apply text-red-600/90 dark:text-red-400/90;
+}
+/* NameFunction */
+.chroma .nf {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* NameFunctionMagic */
+.chroma .fm {
+}
+/* NameLabel */
+.chroma .nl {
+  @apply text-red-600/90 dark:text-red-400/90;
+}
+/* NameNamespace */
+.chroma .nn {
+}
+/* NameOther */
+.chroma .nx {
+}
+/* NameProperty */
+.chroma .py {
+}
+/* NameTag */
+.chroma .nt {
+  @apply text-red-600/90 dark:text-red-400/90;
+}
+/* NameVariable */
+.chroma .nv {
+}
+/* NameVariableClass */
+.chroma .vc {
+}
+/* NameVariableGlobal */
+.chroma .vg {
+}
+/* NameVariableInstance */
+.chroma .vi {
+}
+/* NameVariableMagic */
+.chroma .vm {
+}
+/* Literal */
+.chroma .l {
+}
+/* LiteralDate */
+.chroma .ld {
+}
+/* LiteralString */
+.chroma .s {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringAffix */
+.chroma .sa {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringBacktick */
+.chroma .sb {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringChar */
+.chroma .sc {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringDelimiter */
+.chroma .dl {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringDoc */
+.chroma .sd {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringDouble */
+.chroma .s2 {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringEscape */
+.chroma .se {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringHeredoc */
+.chroma .sh {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringInterpol */
+.chroma .si {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringOther */
+.chroma .sx {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringRegex */
+.chroma .sr {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringSingle */
+.chroma .s1 {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralStringSymbol */
+.chroma .ss {
+  @apply text-stone-500;
+}
+/* LiteralNumber */
+.chroma .m {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralNumberBin */
+.chroma .mb {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralNumberFloat */
+.chroma .mf {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralNumberHex */
+.chroma .mh {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralNumberInteger */
+.chroma .mi {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralNumberIntegerLong */
+.chroma .il {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* LiteralNumberOct */
+.chroma .mo {
+  @apply text-indigo-600/90 dark:text-indigo-400/90;
+}
+/* Operator */
+.chroma .o {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* OperatorWord */
+.chroma .ow {
+  @apply text-pink-600 dark:text-pink-400;
+}
+/* Punctuation */
+.chroma .p {
+}
+/* Comment */
+.chroma .c {
+  @apply italic text-stone-500;
+}
+/* CommentHashbang */
+.chroma .ch {
+  @apply italic text-stone-500;
+}
+/* CommentMultiline */
+.chroma .cm {
+  @apply italic text-stone-500;
+}
+/* CommentSingle */
+.chroma .c1 {
+  @apply italic text-stone-500;
+}
+/* CommentSpecial */
+.chroma .cs {
+  @apply italic text-stone-500;
+}
+/* CommentPreproc */
+.chroma .cp {
+  @apply text-stone-500;
+}
+/* CommentPreprocFile */
+.chroma .cpf {
+  @apply italic text-stone-500;
+}
+/* Generic */
+.chroma .g {
+}
+/* GenericDeleted */
+.chroma .gd {
+  @apply bg-red-600/90 text-stone-200 dark:bg-red-400/90 dark:text-stone-800;
+}
+/* GenericEmph */
+.chroma .ge {
+  @apply text-stone-500 underline;
+}
+/* GenericError */
+.chroma .gr {
+  @apply bg-red-600/90 font-bold dark:bg-red-400/90;
+}
+/* GenericHeading */
+.chroma .gh {
+  @apply font-bold text-lime-600/90 dark:text-lime-400/90;
+}
+/* GenericInserted */
+.chroma .gi {
+  @apply bg-lime-600/90 text-stone-200 dark:bg-lime-400/90 dark:text-stone-800;
+}
+/* GenericOutput */
+.chroma .go {
+  @apply text-stone-500;
+}
+/* GenericPrompt */
+.chroma .gp {
+}
+/* GenericStrong */
+.chroma .gs {
+}
+/* GenericSubheading */
+.chroma .gu {
+  @apply font-bold text-lime-600/90 dark:text-lime-400/90;
+}
+/* GenericTraceback */
+.chroma .gt {
+  @apply bg-red-600/90 font-bold dark:bg-red-400/90;
+}
+/* GenericUnderline */
+.chroma .gl {
+}
+/* TextWhitespace */
+.chroma .w {
+}

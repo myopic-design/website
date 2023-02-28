@@ -1,0 +1,19 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "public/",
+      "url": ["/", "/about/", "/games/", "/blog/", "/blog/verify-itchio-link-on-mastodon-profile/"]
+    },
+    "assert": {
+      "preset": "lighthouse:recommended",
+      "assertions": {
+        "bf-cache": "off",
+        "csp-xss": "off",
+        "tap-targets": "off"
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}

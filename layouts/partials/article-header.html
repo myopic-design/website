@@ -1,0 +1,24 @@
+{{ $hasHeroImage := .Params.heroImage | not | not }}
+
+<header class="container-out">
+  <div class="container-mid">
+    <div class="container-in">
+      <h1
+        class="p-name relative pb-8 text-5xl font-extrabold md:text-6xl lg:pb-12 lg:text-7xl"
+      >
+        <span
+          class="{{ cond $hasHeroImage "lg:mr-80 lg:pr-8" "" }} block bg-gradient-to-r from-pink-600 via-fuchsia-600 to-indigo-600 bg-clip-text leading-tight text-transparent drop-shadow-lg dark:from-pink-600 dark:via-fuchsia-400 dark:to-indigo-400"
+        >
+          {{ .Title | markdownify }}
+        </span>
+        {{ with .Params.heroImage }}
+          {{ $src := printf "images/%s" . }}
+          {{ $img := resources.Get $src }}
+          {{ $class := "absolute right-0 top-0 !m-0 hidden w-80 drop-shadow-accent-light dark:drop-shadow-accent-dark lg:block" }}
+
+          {{ partial "utils/img-manual" (dict "img" $img "src" $src "alt" "" "class" $class "loading" "eager") }}
+        {{ end }}
+      </h1>
+    </div>
+  </div>
+</header>
