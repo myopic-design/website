@@ -1,0 +1,3 @@
+{{ $url := ((site.GetPage "/").OutputFormats.Get "RSS").Permalink }}
+
+<a rel="noreferrer" target="_blank" href="feed:{{ $url }}">{{ .Inner | markdownify }}</a>

@@ -1,0 +1,32 @@
+{{ $img := .img }}
+{{ $src := .src }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class }}
+{{ $loading := .loading | default "lazy" }}
+
+{{ $ext := $src | path.Ext | replaceRE "^\\." "" }}
+{{ $density := $src | replaceRE "^.+@(\\d+)x\\..+$" "$1" | float }}
+{{ $width := div $img.Width $density }}
+{{ $height := div $img.Height $density }}
+
+{{ $avifImg := resources.GetMatch (replace $src $ext "avif") }}
+{{ $webpImg := resources.GetMatch (replace $src $ext "webp") }}
+
+<picture>
+  <source
+    type="image/avif"
+    {{ printf " srcset=\"%s\"" $avifImg.RelPermalink | safeHTMLAttr }}
+  />
+  <source
+    type="image/webp"
+    {{ printf " srcset=\"%s\"" $webpImg.RelPermalink | safeHTMLAttr }}
+  />
+  <img
+    alt="{{ $alt }}"
+    width="{{ $width }}"
+    height="{{ $height }}"
+    src="{{ $src }}"
+    class="{{ $class }}"
+    loading="{{ $loading }}"
+  />
+</picture>

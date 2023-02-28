@@ -1,0 +1,17 @@
+{{ define "article-main" }}
+  <div class="container-out">
+    <div class="container-mid">
+      {{ with .Content }}
+        <div class="container-in prose-defaults prose pb-8 md:prose-lg lg:prose-xl lg:pb-12">
+          {{ . }}
+        </div>
+      {{ end }}
+
+      <div class="container-in">
+        <h2 class="sr-only">Latest blog posts</h2>
+
+        {{ partial "article-list" (partial "utils/articles-latest" .) }}
+      </div>
+    </div>
+  </div>
+{{ end }}

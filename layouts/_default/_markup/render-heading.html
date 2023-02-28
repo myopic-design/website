@@ -1,0 +1,8 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}" class="group">
+  {{ .Text | safeHTML }}<a
+    aria-label="Direct link to {{ .Text | safeHTML }}"
+    title="Direct link to {{ .Text | safeHTML }}"
+    href="#{{ .Anchor | safeURL }}"
+    class="mx-2 no-underline opacity-0 transition-opacity before:content-['#'] hocus:opacity-100 group-hocus:opacity-100 print:hidden"
+  ></a>
+</h{{ .Level }}>

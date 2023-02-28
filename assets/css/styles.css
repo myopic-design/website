@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./syntax.css";
+
+@layer base {
+  details, kbd {
+    @apply bg-white/90 ring-1 ring-stone-900/5 dark:bg-stone-800/90 dark:ring-white/10;
+  }
+}
+
+@layer components {
+  .container-out {
+    @apply mx-auto w-full max-w-8xl sm:px-8 lg:px-16;
+  }
+  .container-mid {
+    @apply px-4 sm:px-8 lg:px-12;
+  }
+  .container-in {
+    @apply mx-auto max-w-3xl lg:max-w-5xl;
+  }
+  .container-rounded {
+    @apply rounded-2xl bg-white/90 shadow-lg shadow-stone-800/5 ring-1 ring-stone-900/5 backdrop-blur-sm dark:bg-stone-800/90 dark:ring-white/10;
+  }
+}
+
+@layer utilities {
+  .prose-defaults {
+    @apply dark:prose-img:brightness-80 dark:prose-img:contrast-120 dark:prose-video:brightness-80 dark:prose-video:contrast-120  prose-stone dark:prose-invert prose-headings:text-stone-900 prose-a:text-pink-800 prose-img:mx-auto prose-img:rounded-lg prose-video:mx-auto prose-video:rounded-lg hocus:prose-a:text-pink-600 prose-headings:dark:text-stone-100 dark:prose-a:text-pink-200 dark:hocus:prose-a:text-pink-400 md:prose-img:rounded-xl md:prose-video:rounded-xl lg:prose-img:rounded-2xl lg:prose-video:rounded-2xl;
+  }
+}

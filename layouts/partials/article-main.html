@@ -1,0 +1,11 @@
+{{ $hasHeroImage := .Params.heroImage | not | not }}
+
+<div class="container-out">
+  <div class="container-mid">
+    <div class="container-in prose-defaults prose md:prose-lg lg:prose-xl">
+      <div class="{{ cond $hasHeroImage "lg:mr-80 lg:pr-8" "" }}">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</div>

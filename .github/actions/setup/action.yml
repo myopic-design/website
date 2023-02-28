@@ -1,0 +1,46 @@
+name: Setup
+description: "Install required dependencies and build site"
+
+inputs:
+  hugo-version:
+    description: "Hugo version"
+    required: true
+    default: "0.117.0"
+  node-version:
+    description: "Node version"
+    required: true
+    default: "18"
+  pnpm-version:
+    description: "pnpm version"
+    required: true
+    default: "8"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Hugo ${{ inputs.hugo-version }}
+      run: |
+        wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${{ inputs.hugo-version }}/hugo_extended_${{ inputs.hugo-version }}_linux-amd64.deb
+        sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      shell: bash
+    - name: Set up pnpm ${{ inputs.pnpm-version }}
+      uses: pnpm/action-setup@v2
+      with:
+        version: ${{ inputs.pnpm-version }}
+    - name: Set up Node ${{ inputs.node-version }}
+      uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: "pnpm"
+    - name: Install dependencies
+      run: pnpm install
+      shell: bash
+    - name: Install Playwright browsers
+      run: pnpm playwright install --with-deps
+      shell: bash
+    - name: Install PostCSS globally
+      run: npm install -g postcss-cli
+      shell: bash
+    - name: Install Lighthouse globally
+      run: npm install -g @lhci/cli
+      shell: bash
