@@ -1,0 +1,9 @@
+{{ $src := .Get "src" }}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
+{{ $alt := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $id := .Get "id" }}
+{{ $class := .Get "class" }}
+
+{{ partial "utils/video" (dict "src" $src "width" $width "height" $height "alt" $alt "caption" $caption "id" $id "class" $class) }}

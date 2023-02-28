@@ -1,0 +1,9 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $id := .Get "id" }}
+{{ $class := .Get "class" }}
+
+{{ $img := .Page.Resources.GetMatch $src }}
+
+{{ partial "utils/img" (dict "img" $img "src" $src "alt" $alt "caption" $caption "id" $id "class" $class) }}

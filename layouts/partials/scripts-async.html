@@ -1,0 +1,3 @@
+{{ $scripts := resources.Get "js/scripts.js" | resources.ExecuteAsTemplate "js/scripts.js" . }}
+
+<script async src="{{ $scripts.RelPermalink }}"></script>

@@ -1,0 +1,10 @@
+/.lighthouseci/
+/e2e-report/
+/e2e-results/
+/public/
+/resources/_gen/
+/CHANGELOG.md
+/hugo_stats.json
+/package-lock.json
+/pnpm-lock.yaml
+/yarn.lock

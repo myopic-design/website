@@ -1,0 +1,27 @@
+<button
+  popovertarget="menu"
+  class="group flex items-center py-2 pl-3 pr-2 hocus:text-pink-600 supports-anchor:anchor-name-[menu-button] dark:hocus:text-pink-400"
+>
+  Menu
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 8 6"
+    class="ml-3 h-auto w-2 stroke-stone-800 group-hocus:stroke-pink-600 dark:stroke-stone-200 dark:group-hocus:stroke-pink-400"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1.5"
+      d="M1.75 1.75 4 4.25l2.25-2.5"
+    />
+  </svg>
+</button>
+
+<nav
+  aria-label="main"
+  popover="auto"
+  id="menu"
+  class="container-rounded -ml-3 mb-0 mr-0 mt-3 !min-w-[9rem] text-center font-medium supports-anchor:anchor-select-[menu-button]"
+>
+  {{ partial "utils/links-nav"  (dict "currentPage" .) }}
+</nav>

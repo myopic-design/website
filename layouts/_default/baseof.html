@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ site.LanguageCode | default "en-us" }}">
+  {{ partial "head" . }}
+
+  <body
+    class="flex h-screen bg-stone-100 text-stone-800 selection:bg-pink-200 dark:bg-stone-950 dark:text-stone-200 dark:selection:bg-pink-800"
+  >
+    {{ partial "scripts-blocking" . }}
+
+    <div class="flex w-screen">
+      <div class="container-out fixed inset-0 flex">
+        <div
+          class="w-full bg-stone-50 ring-1 ring-stone-200/50 dark:bg-stone-900 dark:ring-stone-700/50"
+        ></div>
+      </div>
+
+      <div class="relative flex w-full flex-col">
+        {{ partial "utils/link-skip-nav" . }}
+
+        {{ partial "body-header" . }}
+
+        <main id="main">
+          {{ if .IsPage }}<article class="h-entry">{{ else }}<div>{{ end }}
+          {{ block "article-meta" . }}{{ end }}
+          {{ partial "article-header" . }}
+          <div class="{{ cond .IsPage "e-content " "" }}">
+            {{ block "article-main" . }}{{ end }}
+          </div>
+          {{ partial "article-footer" . }}
+          {{ if .IsPage }}</article>{{ else }}</div>{{ end}}
+        </main>
+
+        {{ partial "body-footer" . }}
+      </div>
+    </div>
+
+    {{ partial "scripts-async" . }}
+  </body>
+</html>

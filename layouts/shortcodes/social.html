@@ -1,0 +1,7 @@
+{{ $count := .Get "count" | default (.Get 0) | default 16 }}
+
+<div class="-mx-2 flex flex-wrap gap-1 lg:gap-2">
+  {{ range (first $count site.Params.social) }}
+    {{ partial "utils/link-social" (dict "href" .url "label" .label "icon" .icon "iconDimensions" .iconDimensions) }}
+  {{ end }}
+</div>
