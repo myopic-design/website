@@ -1,0 +1,114 @@
+baseURL = "https://myopic.design/"
+languageCode = "en-us"
+title = "Myopic Design"
+
+enableGitInfo = true
+enableRobotsTXT = true
+ignoreFiles = ["README.md", "LICENSE"]
+sectionPagesMenu = "main"
+
+[params]
+description = "A budding one-person indie game studio."
+themeColor = "#b55088"
+backgroundColor = "#b55088"
+
+[[params.csp]]
+directive = "upgrade-insecure-requests"
+values = []
+[[params.csp]]
+directive = "default-src"
+values = ["'self'"]
+[[params.csp]]
+directive = "script-src"
+values = ["'self'", "'sha256-DNIqKZxNCKxzUtn7UF63Q9Y9fYPiqhmHCE72QFU5mqw='"]
+
+# [[params.social]]
+# label = "Steam"
+# icon = "steam"
+# iconDimensions = "496 512"
+# url = "https://store.steampowered.com/developer/MyopicDesign"
+[[params.social]]
+label = "itch.io"
+icon = "itchio"
+iconDimensions = "512 512"
+url = "https://MyopicDesign.itch.io"
+[[params.social]]
+label = "YouTube"
+icon = "youtube"
+iconDimensions = "576 512"
+url = "https://www.youtube.com/@MyopicDesign"
+# [[params.social]]
+# label = "Twitter"
+# icon = "twitter"
+# iconDimensions = "512 512"
+# url = "https://twitter.com/@MyopicDesign"
+[[params.social]]
+label = "Mastodon"
+icon = "mastodon"
+iconDimensions = "448 512"
+url = "https://mastodon.gamedev.place/@MyopicDesign"
+[[params.social]]
+label = "TikTok"
+icon = "tiktok"
+iconDimensions = "448 512"
+url = "https://www.tiktok.com/@MyopicDesign"
+[[params.social]]
+label = "Twitch"
+icon = "twitch"
+iconDimensions = "512 512"
+url = "https://twitch.tv/MyopicDesign"
+[[params.social]]
+label = "Threads"
+icon = "threads"
+iconDimensions = "448 512"
+url = "https://www.threads.net/MyopicDesign"
+[[params.social]]
+label = "Instagram"
+icon = "instagram"
+iconDimensions = "448 512"
+url = "https://www.instagram.com/MyopicDesign"
+[[params.social]]
+label = "cohost"
+icon = "cohost"
+iconDimensions = "576 512"
+url = "https://cohost.org/MyopicDesign"
+[[params.social]]
+label = "GitHub"
+icon = "github"
+iconDimensions = "496 512"
+url = "https://github.com/myopic-design"
+
+[build]
+writeStats = true
+
+[imaging]
+hint = 'icon'
+quality = 75
+
+[markup.highlight]
+noClasses = false
+
+[markup.goldmark.parser]
+wrapStandAloneImageWithinParagraph = false
+
+[mediaTypes."application/manifest+json"]
+suffixes = ["webmanifest", "json"]
+
+[outputFormats.manifest]
+mediaType = "application/manifest+json"
+baseName = "manifest"
+isPlainText = true
+rel = "manifest"
+
+[outputFormats.rss]
+baseName = "rss"
+
+[outputs]
+home = ["html", "manifest", "rss"]
+page = ["html"]
+section = ["html"]
+taxonomy = ["html"]
+term = ["html"]
+
+[taxonomies]
+tag = "tags"

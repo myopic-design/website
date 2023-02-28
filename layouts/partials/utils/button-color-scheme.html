@@ -1,0 +1,24 @@
+<button
+  aria-label="Toggle color scheme"
+  id="color-scheme-button"
+  class="group px-3 py-2 hocus:text-pink-600 dark:hocus:text-pink-400"
+>
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    fill="currentColor"
+    stroke="currentColor"
+    class="block h-6 w-6 dark:hidden"
+  >
+    <use href="{{ "sun" | printf "images/sprites.svg#icon-%s" | relURL }}" />
+  </svg>
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    fill="currentColor"
+    stroke="currentColor"
+    class="hidden h-6 w-6 dark:block"
+  >
+    <use href="{{ "moon" | printf "images/sprites.svg#icon-%s" | relURL }}" />
+  </svg>
+</button>

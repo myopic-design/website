@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./syntax.css";
+
+@layer components {
+  .container-out {
+    @apply mx-auto w-full max-w-8xl sm:px-8 lg:px-16;
+  }
+  .container-mid {
+    @apply px-4 sm:px-8 lg:px-12;
+  }
+  .container-in {
+    @apply mx-auto max-w-3xl lg:max-w-5xl;
+  }
+  .container-rounded {
+    @apply rounded-2xl bg-white/90 shadow-lg shadow-stone-800/5 ring-1 ring-stone-900/5 backdrop-blur-sm dark:bg-stone-800/90 dark:ring-white/10;
+  }
+}
+
+@layer utilities {
+  .prose-colors {
+    @apply prose-stone dark:prose-invert prose-headings:text-stone-900 prose-a:text-pink-800 prose-pre:!rounded-2xl hocus:prose-a:text-pink-600 prose-headings:dark:text-stone-100 dark:prose-a:text-pink-200 dark:hocus:prose-a:text-pink-400;
+  }
+}

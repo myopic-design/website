@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  pull_request:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        with:
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Run e2e tests
+        run: pnpm test:e2e
+      - name: Build
+        run: |
+          pnpm build \
+            --baseURL "https://myopic.design/" \
+            --destination "public"
+      - name: Run Lighthouse tests
+        run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      - name: Upload website
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        with:
+          name: website
+          path: public
+          retention-days: 1
+      - name: Upload e2e test reports
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
+        if: ${{ always() }}
+        with:
+          name: e2e-reports
+          path: |
+            e2e-report/
+            e2e-results/
+          retention-days: 7

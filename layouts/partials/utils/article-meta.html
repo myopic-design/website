@@ -1,0 +1,7 @@
+<div class="flex flex-row flex-wrap gap-4 text-stone-600 dark:text-stone-400 text-sm md:text-base">
+  <div>
+    {{ partial "utils/article-time" .Date }}
+    {{ if eq .Section "blog" }}— {{ partial "utils/article-length" .Content }}{{ end }}
+  </div>
+  {{ partial "utils/tags-list" . }}
+</div>

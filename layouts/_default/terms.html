@@ -1,0 +1,15 @@
+{{ define "article-main" }}
+  <div class="container-out">
+    <div class="container-mid">
+      {{ with .Content }}
+        <div class="container-in prose-colors prose pb-8 md:prose-lg lg:prose-xl lg:pb-12">
+          {{ . }}
+        </div>
+      {{ end }}
+
+      <div class="container-in">
+        {{ partial "terms-list" .Data.Terms }}
+      </div>
+    </div>
+  </div>
+{{ end }}
