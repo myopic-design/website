@@ -12,16 +12,6 @@ description = "A budding one-person indie game studio."
 themeColor = "#b55088"
 backgroundColor = "#b55088"
 
-[[params.csp]]
-directive = "upgrade-insecure-requests"
-values = []
-[[params.csp]]
-directive = "default-src"
-values = ["'self'"]
-[[params.csp]]
-directive = "script-src"
-values = ["'self'", "'sha256-DNIqKZxNCKxzUtn7UF63Q9Y9fYPiqhmHCE72QFU5mqw='"]
-
 # [[params.social]]
 # label = "Steam"
 # icon = "steam"
