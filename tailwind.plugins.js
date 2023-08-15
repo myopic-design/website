@@ -84,6 +84,15 @@ const mediaQueryPlugin = plugin(({ addVariant }) => {
   addVariant("update-fast", "@media (update: fast)");
 });
 
+const pointerQueryPlugin = plugin(({ addVariant }) => {
+  addVariant("any-pointer-none", "@media (any-pointer: none)");
+  addVariant("any-pointer-coarse", "@media (any-pointer: coarse)");
+  addVariant("any-pointer-fine", "@media (any-pointer: fine)");
+  addVariant("pointer-none", "@media (pointer: none)");
+  addVariant("pointer-coarse", "@media (pointer: coarse)");
+  addVariant("pointer-fine", "@media (pointer: fine)");
+});
+
 const viewTimelinePlugin = plugin(({ addUtilities, matchUtilities }) => {
   addUtilities({
     ".view-timeline-block": {
@@ -105,5 +114,6 @@ module.exports = {
   stopColor: stopColorPlugin,
   hocus: hocusPlugin,
   mediaQuery: mediaQueryPlugin,
+  pointerQuery: pointerQueryPlugin,
   viewTimeline: viewTimelinePlugin,
 };

@@ -1,11 +1,18 @@
 const { formatColor, parseColor } = require("tailwindcss/lib/util/color");
 const typography = require("@tailwindcss/typography");
-const { anchor, hocus, mediaQuery, stopColor, viewTimeline } = require("./tailwind.plugins");
+const {
+  anchor,
+  hocus,
+  mediaQuery,
+  pointerQuery,
+  stopColor,
+  viewTimeline,
+} = require("./tailwind.plugins");
 
 module.exports = {
   content: ["./content/**/*.md", "./layouts/**/*.html"],
   darkMode: "class",
-  plugins: [typography, anchor, hocus, mediaQuery, stopColor, viewTimeline],
+  plugins: [typography, anchor, hocus, mediaQuery, pointerQuery, stopColor, viewTimeline],
   theme: {
     extend: {
       dropShadow: ({ theme }) => {
