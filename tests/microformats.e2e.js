@@ -31,6 +31,13 @@ const checks = {
       ".h-card[rel=me]": { minCount: 1, maxCount: 1 },
     },
   },
+  "blog-article": {
+    url: "/blog/verify-itchio-link-on-mastodon-profile/",
+    selectors: {
+      ".h-entry": { minCount: 1, maxCount: 1 },
+      ".h-card[rel=me]": { minCount: 1, maxCount: 1 },
+    },
+  },
 };
 
 test.describe("microformats", async () => {
