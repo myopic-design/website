@@ -7,6 +7,7 @@ https://:project.pages.dev/*
   Permissions-Policy: camera=(), document-domain=(), geolocation=(), microphone=()
   Referrer-Policy: no-referrer
   Content-Security-Policy: upgrade-insecure-requests; default-src 'self'; base-uri 'none'; frame-ancestors 'self'; object-src 'none'; script-src 'self' 'sha256-DNIqKZxNCKxzUtn7UF63Q9Y9fYPiqhmHCE72QFU5mqw='
+  Link: </css/styles.css>; rel=preload; as=style
 
 /*/
   X-Content-Type-Options: nosniff
@@ -14,3 +15,4 @@ https://:project.pages.dev/*
   Permissions-Policy: camera=(), document-domain=(), geolocation=(), microphone=()
   Referrer-Policy: no-referrer
   Content-Security-Policy: upgrade-insecure-requests; default-src 'self'; base-uri 'none'; frame-ancestors 'self'; object-src 'none'; script-src 'self' 'sha256-DNIqKZxNCKxzUtn7UF63Q9Y9fYPiqhmHCE72QFU5mqw='
+  Link: </css/styles.css>; rel=preload; as=style
