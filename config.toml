@@ -11,6 +11,8 @@ sectionPagesMenu = "main"
 description = "A budding one-person indie game studio."
 themeColor = "#b55088"
 backgroundColor = "#b55088"
+umamiId = "d32ed276-0767-406c-98a4-3c886b8146b4"
+umamiTracker = "https://um.myopic.design/um.js"
 
 # [[params.social]]
 # label = "Steam"
