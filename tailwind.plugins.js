@@ -16,14 +16,23 @@ const anchorPlugin = plugin(({ matchUtilities }) => {
   });
 });
 
-const stopColorPlugin = plugin(({ matchUtilities, theme }) => {
+const animationTimelinePlugin = plugin(({ matchUtilities }) => {
+  matchUtilities({
+    "animation-timeline": (value) => ({
+      "animation-timeline": `--${value}`,
+    }),
+  });
+});
+
+const boxReflectPlugin = plugin(({ matchUtilities, theme }) => {
   matchUtilities(
     {
-      stop: (value) => {
-        return { "stop-color": toColorValue(value) };
-      },
+      "box-reflect": (value) => ({
+        "--tw-box-reflect-length": value,
+        "-webkit-box-reflect": "below var(--tw-box-reflect-length) linear-gradient(var(--tw-gradient-stops))",
+      }),
     },
-    { values: flattenColorPalette(theme("stopColor")), type: ["color", "any"] },
+    { values: theme("spacing") }
   );
 });
 
@@ -84,6 +93,14 @@ const mediaQueryPlugin = plugin(({ addVariant }) => {
   addVariant("update-fast", "@media (update: fast)");
 });
 
+const perspectivePlugin = plugin(({ matchUtilities }) => {
+  matchUtilities({
+    perspective: (value) => ({
+      perspective: value,
+    }),
+  });
+});
+
 const pointerQueryPlugin = plugin(({ addVariant }) => {
   addVariant("any-pointer-none", "@media (any-pointer: none)");
   addVariant("any-pointer-coarse", "@media (any-pointer: coarse)");
@@ -91,6 +108,17 @@ const pointerQueryPlugin = plugin(({ addVariant }) => {
   addVariant("pointer-none", "@media (pointer: none)");
   addVariant("pointer-coarse", "@media (pointer: coarse)");
   addVariant("pointer-fine", "@media (pointer: fine)");
+});
+
+const stopColorPlugin = plugin(({ matchUtilities, theme }) => {
+  matchUtilities(
+    {
+      stop: (value) => {
+        return { "stop-color": toColorValue(value) };
+      },
+    },
+    { values: flattenColorPalette(theme("stopColor")), type: ["color", "any"] },
+  );
 });
 
 const viewTimelinePlugin = plugin(({ addUtilities, matchUtilities }) => {
@@ -111,9 +139,12 @@ const viewTimelinePlugin = plugin(({ addUtilities, matchUtilities }) => {
 
 module.exports = {
   anchor: anchorPlugin,
-  stopColor: stopColorPlugin,
+  animationTimeline: animationTimelinePlugin,
+  boxReflect: boxReflectPlugin,
   hocus: hocusPlugin,
   mediaQuery: mediaQueryPlugin,
+  perspective: perspectivePlugin,
   pointerQuery: pointerQueryPlugin,
+  stopColor: stopColorPlugin,
   viewTimeline: viewTimelinePlugin,
 };
