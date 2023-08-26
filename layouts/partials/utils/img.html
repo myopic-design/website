@@ -33,7 +33,7 @@
 {{ $sizes = $sizes | append "100vw" }}
 {{ $sizes = delimit $sizes ", " }}
 
-<figure>
+{{ if $caption }}<figure>{{ end }}
   <picture>
     <source
       type="image/webp"
@@ -55,4 +55,4 @@
       {{ . | markdownify }}
     </figcaption>
   {{ end }}
-</figure>
+{{ if $caption }}</figure>{{ end }}

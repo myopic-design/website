@@ -1,0 +1,31 @@
+{{ $json := .Get "json" }}
+
+{{ $resources := .Page.Resources }}
+{{ $folder := path.Dir .Page.File.Path }}
+{{ $items := getJSON (path.Join "content" $folder $json) }}
+
+<figure class="not-prose">
+  <ul
+    class="select-none snap-x snap-mandatory list-none overflow-x-scroll whitespace-nowrap rounded-lg bg-white/90 pb-8 pt-4 ring-1 ring-stone-900/5 supports-animation-timeline:pb-16 supports-animation-timeline:pt-12 dark:bg-stone-800/90 dark:ring-white/10 md:rounded-xl supports-animation-timeline:md:pb-20 supports-animation-timeline:md:pt-16 lg:rounded-2xl supports-animation-timeline:lg:pb-24 supports-animation-timeline:lg:pt-20"
+  >
+    {{ range $index, $item := $items }}
+      {{ $name := $item.name }}
+      {{ $src := $item.image }}
+      {{ $img := $resources.GetMatch $src }}
+      <li
+        class="z-10 mx-2 inline-block w-16 snap-center first-of-type:ml-[calc(50%_-_2rem)] last-of-type:mr-[calc(50%_-_2rem)] supports-animation-timeline:relative supports-animation-timeline:animate-coverflow-z-index supports-animation-timeline:will-change-z-index supports-animation-timeline:animation-timeline-[coverflow] supports-animation-timeline:perspective-[40rem] supports-animation-timeline:view-timeline-inline supports-animation-timeline:view-timeline-name-[coverflow] md:w-20 md:first-of-type:ml-[calc(50%_-_2.5rem)] md:last-of-type:mr-[calc(50%_-_2.5rem)] lg:w-24 lg:first-of-type:ml-[calc(50%_-_3rem)] lg:last-of-type:mr-[calc(50%_-_3rem)]"
+      >
+        <div
+          class="group relative supports-animation-timeline:animate-coverflow-rotate supports-animation-timeline:will-change-transform supports-animation-timeline:animation-timeline-[coverflow]"
+        >
+          {{ partial "utils/img" (dict "img" $img "src" $src "class" "block h-auto w-full from-black/0 to-black/25 box-reflect-4") }}
+          <p
+            class="absolute bottom-0 left-0 right-0 z-10 whitespace-normal bg-black/75 px-2 py-1 text-center text-xs leading-tight text-white opacity-0 transition-opacity group-hover:opacity-100"
+          >
+            {{ $name }}
+          </p>
+        </div>
+      </li>
+    {{ end }}
+  </ul>
+</figure>
