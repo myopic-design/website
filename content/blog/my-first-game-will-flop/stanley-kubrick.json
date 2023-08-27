@@ -1,0 +1,18 @@
+[
+  { "name": "Flying Padre (1951)", "image": "images/01@2x.jpg" },
+  { "name": "Day of the Fight (1951)", "image": "images/02@2x.jpg" },
+  { "name": "Fear and Desire (1952)", "image": "images/03@2x.jpg" },
+  { "name": "The Seafarers (1953)", "image": "images/04@2x.jpg" },
+  { "name": "Killer's Kiss (1955)", "image": "images/05@2x.jpg" },
+  { "name": "The Killing (1956)", "image": "images/06@2x.jpg" },
+  { "name": "Paths of Glory (1957)", "image": "images/07@2x.jpg" },
+  { "name": "Spartacus (1960)", "image": "images/08@2x.jpg" },
+  { "name": "Lolita (1962)", "image": "images/09@2x.jpg" },
+  { "name": "Dr. Strangelove (1964)", "image": "images/10@2x.jpg" },
+  { "name": "2001: A Space Odyssey (1968)", "image": "images/11@2x.jpg" },
+  { "name": "A Clockwork Orange (1971)", "image": "images/12@2x.jpg" },
+  { "name": "Barry Lyndon (1975)", "image": "images/13@2x.jpg" },
+  { "name": "The Shining (1980)", "image": "images/14@2x.jpg" },
+  { "name": "Full Metal Jacket (1987)", "image": "images/15@2x.jpg" },
+  { "name": "Eyes Wide Shut (1999)", "image": "images/16@2x.jpg" }
+]
