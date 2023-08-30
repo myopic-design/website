@@ -8,9 +8,24 @@
           {{ end }}
         </nav>
         <p class="pt-6 text-sm text-stone-600 dark:text-stone-400 md:text-base lg:pt-0">
-          © {{ now.Year }}
-          <a rel="me" href="{{ ref . "/" }}" class="h-card">{{ site.Title }}</a>.
-          All rights reserved.
+          <span>
+            © {{ now.Year }}
+            <a
+              rel="me"
+              href="{{ ref . "/" }}"
+              class="h-card hocus:text-pink-600 dark:hocus:text-pink-400"
+            >
+              {{ site.Title }}
+            </a>
+          </span>
+          •
+          <a href="{{ ref . "/terms" }}" class="hocus:text-pink-600 dark:hocus:text-pink-400">
+            Terms
+          </a>
+          •
+          <a href="{{ ref . "/privacy" }}" class="hocus:text-pink-600 dark:hocus:text-pink-400">
+            Privacy
+          </a>
         </p>
       </div>
     </div>
