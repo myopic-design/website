@@ -1,7 +1,9 @@
+{{- $attributes := .Attributes -}}
 {{- $isExternal := strings.HasPrefix .Destination "http" -}}
 
 <a
   {{ if $isExternal }}rel="noreferrer" target="_blank"{{ end }}
   href="{{ .Destination | safeURL }}"
+  class="{{ $attributes.class }}"
   >{{ .Text | safeHTML }}</a
 >

@@ -1,4 +1,4 @@
 {{- $img := .Page.Resources.GetMatch .Destination -}}
-{{- $attributes := .Attributes }}
+{{- $attributes := .Attributes -}}
 
 {{ partial "utils/img" (dict "img" $img "src" .Destination "alt" .Text "id" $attributes.id "class" $attributes.class) }}
