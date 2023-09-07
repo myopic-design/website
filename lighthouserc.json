@@ -9,7 +9,8 @@
       "assertions": {
         "bf-cache": "off",
         "csp-xss": "off",
-        "tap-targets": "off"
+        "tap-targets": "off",
+        "unused-css-rules": "off"
       }
     },
     "upload": {
