@@ -1,0 +1,51 @@
+<div
+  class="not-prose mt-10 rounded-lg bg-gradient-to-br from-pink-600 via-fuchsia-600 to-indigo-600 p-[1px] dark:from-pink-600 dark:via-fuchsia-400 dark:to-indigo-400 md:rounded-xl lg:rounded-2xl"
+>
+  <div class="rounded-lg bg-stone-50 p-8 dark:bg-stone-900 md:rounded-xl lg:rounded-2xl">
+    <div id="subscribe-pending" class="flex flex-col gap-4">
+      <h2
+        class="text-center text-lg font-bold text-stone-900 dark:text-stone-100 md:text-xl lg:pb-4 lg:text-2xl"
+      >
+        Save your spot for my upcoming beta
+      </h2>
+      <form
+        action="{{ site.Params.subscribeAction }}"
+        method="post"
+        target="_blank"
+        class="flex flex-col gap-8"
+      >
+        <p>
+          I'm still working on my game, but when I'm ready to invite beta testers you'll be the
+          first to hear. Save your spot by registering below. 👇
+        </p>
+        <input type="hidden" name="anticsrf" value="true" />
+        <input type="hidden" name="ml-submit" value="1" />
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <input
+            aria-label="Email"
+            type="email"
+            autocomplete="email"
+            name="fields[email]"
+            placeholder="Email"
+            required
+            class="form-input flex-[2]"
+          />
+          <button type="submit" class="form-button flex-[1]">Register now</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="subscribe-success" class="hidden flex-col gap-4">
+      <h2
+        class="text-center text-lg font-bold text-stone-900 dark:text-stone-100 md:text-xl lg:pb-4 lg:text-2xl"
+      >
+        Thank you! 🙏
+      </h2>
+      <p>You should receive a confirmation email shortly.</p>
+      <p>
+        If you don't, please ping me at
+        <a href="mailto:molly@myopic.design" class="underline">molly@myopic.design</a>. 🙇
+      </p>
+    </div>
+  </div>
+</div>
