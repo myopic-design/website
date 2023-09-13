@@ -8,9 +8,10 @@ ignoreFiles = ["LICENSE", "README.md"]
 sectionPagesMenu = "main"
 
 [params]
-description = "A budding one-person indie game studio."
+description = "A cozy little indie game studio."
 themeColor = "#b55088"
 backgroundColor = "#b55088"
+subscribeAction = "https://assets.mailerlite.com/jsonp/589987/forms/98730454545336204/subscribe"
 umamiId = "d32ed276-0767-406c-98a4-3c886b8146b4"
 umamiTracker = "https://um.myopic.design/um.js"
 

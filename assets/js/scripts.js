@@ -12,6 +12,29 @@
   });
 })();
 
+// Subscribe form
+
+(() => {
+  const subscribeSuccess = document.querySelector("#subscribe-success");
+  const subscribePending = document.querySelector("#subscribe-pending");
+  const subscribeForm = subscribePending?.querySelector("form");
+  const subscribeButton = subscribePending?.querySelector('button[type="submit"]');
+
+  subscribeForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    try {
+      subscribeButton.disabled = true;
+      subscribeButton.textContent = "Registering…";
+      const data = new URLSearchParams(new FormData(subscribeForm));
+      await fetch(subscribeForm.action, { method: subscribeForm.method, body: data });
+    } finally {
+      subscribeSuccess.classList.replace("hidden", "flex");
+      subscribePending.classList.replace("flex", "hidden");
+    }
+  });
+})();
+
 // Service Worker
 
 /*

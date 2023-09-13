@@ -6,6 +6,8 @@
       <div class="container-in prose-defaults prose md:prose-lg lg:prose-xl">
         <div class="{{ cond $hasHeroImage "lg:mr-80 lg:pr-8" "" }}">
           {{ .Content }}
+
+          {{/* partial "utils/subscribe" . */}}
         </div>
       </div>
 

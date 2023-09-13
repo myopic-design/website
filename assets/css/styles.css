@@ -24,6 +24,13 @@
   .container-rounded {
     @apply rounded-2xl bg-white/90 shadow-lg shadow-stone-800/5 ring-1 ring-stone-900/5 backdrop-blur-sm dark:bg-stone-800/90 dark:ring-white/10;
   }
+
+  .form-button {
+    @apply rounded-md bg-gradient-to-br from-pink-600 via-fuchsia-600 to-indigo-600 px-4 py-1 text-white disabled:from-pink-800 disabled:via-fuchsia-800 disabled:to-indigo-800 hocus:from-pink-800 hocus:via-fuchsia-800 hocus:to-indigo-800;
+  }
+  .form-input {
+    @apply rounded-md border border-stone-200 bg-stone-100 px-4 py-1 dark:border-stone-700 dark:bg-stone-950;
+  }
 }
 
 @layer utilities {
