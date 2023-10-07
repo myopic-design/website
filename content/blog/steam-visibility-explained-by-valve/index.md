@@ -15,6 +15,12 @@ Valve have published the slides for [Erik Peterson's recent talk on Steam visibi
   caption="No, you can't buy a home page takeover."
 >}}
 
+{{< note >}}
+**Update October 5th, 2023**
+
+Valve have uploaded the talk to YouTube --- [Steam Visibility: How Games Get Surfaced to Players](https://youtu.be/qkmAqBvUBOw).
+{{< /note >}}
+
 ## Visibility
 
 - No widget on Steam is pay-to-win. They're all driven by **player interest** --- that is, revenue.
