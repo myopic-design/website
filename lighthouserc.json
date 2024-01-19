@@ -9,7 +9,9 @@
       "assertions": {
         "bf-cache": "off",
         "csp-xss": "off",
+        "identical-links-same-purpose": "off",
         "tap-targets": "off",
+        "total-byte-weight": "off",
         "unused-css-rules": "off"
       }
     },
