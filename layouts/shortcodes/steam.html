@@ -1,0 +1,11 @@
+{{ $host := "store.steampowered.com" }}
+{{ $id := .Get "id" | default (.Get 0) }}
+{{ $title := .Get "title" | default "Steam page" }}
+
+<iframe
+  title="{{ $title }}"
+  src="https://{{ $host }}/widget/{{ $id }}/"
+  credentialless
+  loading="lazy"
+  class="my-8 h-[190px] w-full [color-scheme:light] "
+></iframe>
