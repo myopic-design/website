@@ -7,11 +7,10 @@ const anchorPlugin = plugin(({ matchUtilities }) => {
     "anchor-name": (value) => ({
       "anchor-name": `--${value}`,
     }),
-    "anchor-select": (value) => ({
-      "anchor-default": `--${value}`,
+    "anchor-bottom-left": (value) => ({
+      "inset-area": "bottom span-left",
       "min-width": "anchor-size(width)",
-      left: "anchor(left)",
-      top: "anchor(bottom)",
+      "position-anchor": `--${value}`,
     }),
   });
 });
