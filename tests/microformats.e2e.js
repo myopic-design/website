@@ -23,6 +23,21 @@ const checks = {
       ".h-card[rel=me]": { minCount: 1, maxCount: 1 },
     },
   },
+  "tools-index": {
+    url: "/tools/",
+    selectors: {
+      ".h-feed": { minCount: 1, maxCount: 1 },
+      ".h-entry": { minCount: 1, maxCount: 25 },
+      ".h-card[rel=me]": { minCount: 1, maxCount: 1 },
+    },
+  },
+  "tools-article": {
+    url: "/tools/steam-asset-scraper/",
+    selectors: {
+      ".h-entry": { minCount: 1, maxCount: 1 },
+      ".h-card[rel=me]": { minCount: 1, maxCount: 1 },
+    },
+  },
   "blog-index": {
     url: "/blog/",
     selectors: {
