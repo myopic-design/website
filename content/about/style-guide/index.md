@@ -370,13 +370,13 @@ The `cite` element is used to represent the title of a work (for example a book,
 
 The `mark` element is used to represent a run of text marked or highlighted for reference purposes. When used in a quotation it indicates a highlight not originally present but added to bring the reader's attention to that part of the text. When used in the main prose of a document, it indicates a part of the document that has been highlighted due to its relevance to the user's current activity. Example:
 
-I also have some <mark>kitten</mark>s who are visiting me these days. They're really cute. I think they like my garden! Maybe I should adopt a <mark>kitten</mark>.
+I also have some ==kitten==s who are visiting me these days. They're really cute. I think they like my garden! Maybe I should adopt a ==kitten==.
 
 ### Edits
 
 The `del` element is used to represent deleted or retracted text which still must remain on the page for some reason. Meanwhile its counterpart, the `ins` element, is used to represent inserted text. Example:
 
-As a result, <del>Kodos</del> <ins>Kang</ins> was elected president.
+As a result, ~~Kodos~~ ++Kang++ was elected president.
 
 ### Variables
 
@@ -388,7 +388,7 @@ If there are <var>n</var> pipes leading to the ice cream factory then I expect a
 
 The `sup` element represents a superscript and the sub element represents a `sub`. These elements must be used only to mark up typographical conventions with specific meanings, not for typographical presentation. As a guide, only use these elements if their absence would change the meaning of the content. Example:
 
-Chemical formulas are written using subscripts (for example C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>), but atomic isotopes are written using superscripts (for example <sup>13</sup>C, <sup>131</sup>I, and <sup>238</sup>U).
+Chemical formulas are written using subscripts (for example C~6~H~12~O~6~), but atomic isotopes are written using superscripts (for example ^13^C, ^131^I, and ^238^U).
 
 ### Small print
 

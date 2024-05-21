@@ -5,15 +5,11 @@ inputs:
   hugo-version:
     description: "Hugo version"
     required: true
-    default: "0.117.0"
+    default: "0.126.1"
   node-version:
     description: "Node version"
     required: true
-    default: "18"
-  pnpm-version:
-    description: "pnpm version"
-    required: true
-    default: "8"
+    default: "20"
 
 runs:
   using: "composite"
@@ -24,9 +20,7 @@ runs:
         sudo dpkg -i ${{ runner.temp }}/hugo.deb
       shell: bash
     - name: Set up pnpm ${{ inputs.pnpm-version }}
-      uses: pnpm/action-setup@v2
-      with:
-        version: ${{ inputs.pnpm-version }}
+      uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4
     - name: Set up Node ${{ inputs.node-version }}
       uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
       with:
