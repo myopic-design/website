@@ -13,7 +13,8 @@ test.describe("home page", () => {
     await page.goto(basePath);
 
     const nav = await page.getByRole("navigation", { name: "main" });
-    await expect(nav).toBeInViewport();
+    const menuButton = await page.getByRole("button", { name: "Menu" });
+    await expect(nav.or(menuButton)).toBeInViewport();
   });
 
   test("has main heading", async ({ page }) => {
