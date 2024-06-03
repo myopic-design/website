@@ -5,7 +5,7 @@ inputs:
   hugo-version:
     description: "Hugo version"
     required: true
-    default: "0.126.1"
+    default: "0.126.3"
   node-version:
     description: "Node version"
     required: true
