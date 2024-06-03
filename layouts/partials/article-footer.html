@@ -10,7 +10,7 @@
           Posted on
           <a href="{{ .RelPermalink }}" class="u-url u-uid"
             >{{ partial "utils/article-time" .Date }}</a
-          >{{ if $tagLinks }} under {{ $tagLinks }}{{ end }}.
+          >{{ if $tagLinks }} under {{ $tagLinks | safeHTML }}{{ end }}.
         </p>
       </div>
     </div>
