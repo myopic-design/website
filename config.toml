@@ -119,5 +119,12 @@ section = ["html"]
 taxonomy = ["html"]
 term = ["html"]
 
+[privacy.vimeo]
+enableDNT = true
+simple = false
+
+[privacy.youtube]
+privacyEnhanced = true
+
 [taxonomies]
 tag = "tags"
