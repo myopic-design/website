@@ -10,7 +10,8 @@
     "clean": "rm -rf .lighthouseci e2e-report e2e-results public resources/_gen .hugo_build.lock hugo_stats.json",
     "dev": "hugo server --buildDrafts --buildExpired --buildFuture",
     "build": "hugo --cleanDestinationDir --minify",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:lhci": "lhci autorun"
   },
   "devDependencies": {
     "@commitlint/cli": "19.3.0",

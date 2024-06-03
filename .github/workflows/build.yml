@@ -22,7 +22,7 @@ jobs:
             --baseURL "https://myopic.design/" \
             --destination "public"
       - name: Run Lighthouse tests
-        run: lhci autorun
+        run: pnpm test:lhci
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
       - name: Upload website

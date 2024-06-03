@@ -19,8 +19,9 @@ runs:
         wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${{ inputs.hugo-version }}/hugo_extended_${{ inputs.hugo-version }}_linux-amd64.deb
         sudo dpkg -i ${{ runner.temp }}/hugo.deb
       shell: bash
-    - name: Set up pnpm ${{ inputs.pnpm-version }}
-      uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4
+    - name: Enable Corepack
+      run: corepack enable
+      shell: bash
     - name: Set up Node ${{ inputs.node-version }}
       uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
       with:
