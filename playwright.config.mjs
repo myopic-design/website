@@ -1,4 +1,4 @@
-const { defineConfig, devices } = require("@playwright/test");
+import { defineConfig, devices } from "@playwright/test";
 
 const baseURL = "http://localhost:1313/";
 
@@ -19,7 +19,7 @@ const config = {
   },
 
   webServer: {
-    command: "pnpm dev",
+    command: "pnpm start",
     url: baseURL,
     reuseExistingServer: !process.env["CI"],
   },
@@ -33,4 +33,4 @@ const config = {
   ],
 };
 
-module.exports = defineConfig(config);
+export default defineConfig(config);

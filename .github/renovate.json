@@ -16,8 +16,5 @@
   "automergeType": "pr",
   "platformAutomerge": true,
   "rebaseWhen": "conflicted",
-  "semanticCommits": "enabled",
-  "constraints": {
-    "pnpm": "8"
-  }
+  "semanticCommits": "enabled"
 }

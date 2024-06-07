@@ -1,5 +1,5 @@
 /*
-{{ $latestArticles := partial "utils/articles-latest" }}
+{{ $latestArticles := partial "utils/articles-latest" . }}
 {{ $latestArticles = delimit (apply $latestArticles "partial" "utils/rel-permalink" ".") "\", \"" }}
 
 {{ $offlineImage := (resources.GetMatch "images/offline.svg").Content }}
@@ -17,6 +17,8 @@ const offlinePages = [
   "{{ relref . "/" }}",
   "{{ relref . "/about" }}",
   "{{ relref . "/blog" }}",
+  "{{ relref . "/games" }}",
+  "{{ relref . "/tools" }}",
   "{{ $latestArticles }}",
 ];
 
@@ -26,6 +28,7 @@ const staticAssets = [
   "{{ "js/scripts.js" | relURL }}",
   "{{ "favicon.ico" | relURL }}",
   "{{ "images/logo.svg" | relURL }}",
+  "{{ "images/sprites.svg" | relURL }}",
 ];
 
 const updateStaticCache = () => {
