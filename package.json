@@ -16,7 +16,7 @@
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
-    "@playwright/test": "1.45.2",
+    "@playwright/test": "1.45.3",
     "@tailwindcss/typography": "0.5.13",
     "autoprefixer": "10.4.19",
     "cssnano": "7.0.4",
