@@ -166,8 +166,8 @@ This image is primarily used in the library overview and collection views.
     <img
       width="600"
       height="900"
-      src="https://cdn.cloudflare.steamstatic.com/steam/apps/268910/library_600x900.jpg"
-      data-template="src=https%3A%2F%2Fcdn.cloudflare.steamstatic.com%2Fsteam%2Fapps%2F%7B%7Bappid%7D%7D%2Flibrary_600x900.jpg"
+      src="https://cdn.cloudflare.steamstatic.com/steam/apps/268910/library_600x900_2x.jpg"
+      data-template="src=https%3A%2F%2Fcdn.cloudflare.steamstatic.com%2Fsteam%2Fapps%2F%7B%7Bappid%7D%7D%2Flibrary_600x900_2x.jpg"
       class="!rounded-none"
     />
   </picture>
